@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --no-source-maps && scripts/cname.sh",
-    "watch": "parcel watch index.html"
+    "build": "parcel build index.html --no-source-maps && scripts/cname.sh"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -15,7 +14,8 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-enroute": "^1.0.0",
-    "styled-components": "^3.2.6"
+    "styled-components": "^3.2.6",
+    "three": "^0.92.0"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",

@@ -2,30 +2,30 @@ import React from 'react';
 import { createClient } from 'contentful';
 import { render } from 'react-dom';
 import { Route, Router } from 'react-enroute';
+import Home from './components/Home';
+import Project from './components/Project';
+import About from './components/About';
+import webgl from './webgl';
+import * as Utils from './utils';
 
-const Home = props => <div> {JSON.stringify(props)} </div>;
-const Project = props => <div> {JSON.stringify(props)} </div>;
-const About = props => <div> {JSON.stringify(props)} </div>;
-const NotFound = props => <div> {JSON.stringify(props)} </div>;
-
-const client = createClient({
-  accessToken:
-    '3c8746a144e07b86399bd4bd63ee28743250280d17a3a2b6b3586e3ecbc8ccaf',
-  space: '41ldn4xmab9t'
-});
+webgl();
+const client = createClient(Utils.auth);
 
 class Root extends React.Component {
   constructor() {
     super();
     this.state = {
-      entries: {}
+      about: {},
+      projects: {}
     };
   }
 
   async componentDidMount() {
-    const entries = await client.getEntries();
-    console.log(entries);
-    this.setState({ entries });
+    const { items } = await client.getEntries();
+    const types = Utils.getTypes(items);
+    const about = Utils.getAbout(types);
+    const projects = Utils.getProjects(types);
+    this.setState({ about, projects });
   }
 
   render() {
@@ -37,7 +37,7 @@ class Root extends React.Component {
         <Route path="/" component={Home} />
         <Route path="/project/:id" component={Project} />
         <Route path="/about" component={About} />
-        <Route path="*" component={NotFound} />
+        <Route path="*" component={Home} />
       </Router>
     );
   }
