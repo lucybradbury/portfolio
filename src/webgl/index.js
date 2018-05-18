@@ -4,6 +4,12 @@ import GPUComputationRenderer from "./GPUComputationRenderer";
 import SimplexNoise from "./SimplexNoise";
 import Detector from "./Detector";
 
+const BASE_COLOR = "#fe91ed";
+const SPEC_COLOR = 0x111111;
+
+// const SPEC_COLOR = "#7462fc";
+document.body.style.backgroundColor = "#ffb3ba";
+
 export default () => {
   if (!Detector.webgl) Detector.addGetWebGLMessage();
 
@@ -53,8 +59,7 @@ export default () => {
   animate();
 
   function init() {
-    container = document.createElement("div");
-    document.body.appendChild(container);
+    container = document.getElementById("canvas");
 
     camera = new THREE.PerspectiveCamera(
       75,
@@ -138,8 +143,8 @@ export default () => {
   }
 
   function initWater() {
-    var materialColor = "#fe91ed";
-    var specColor = 0x111111;
+    var materialColor = BASE_COLOR;
+    var specColor = SPEC_COLOR;
 
     var geometry = new THREE.PlaneBufferGeometry(
       BOUNDS,
@@ -335,16 +340,13 @@ export default () => {
   function onDocumentTouchMove(event) {
     if (event.touches.length === 1) {
       event.preventDefault();
-
       setMouseCoords(event.touches[0].pageX, event.touches[0].pageY);
     }
   }
 
   function animate() {
     requestAnimationFrame(animate);
-
     render();
-    // stats.update();
   }
 
   function render() {

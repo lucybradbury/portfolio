@@ -4,7 +4,6 @@ import { render } from "react-dom";
 import Home from "./components/Home";
 import Project from "./components/Project";
 import About from "./components/About";
-import webgl from "./webgl";
 import * as Utils from "./utils";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -58,5 +57,4 @@ class Root extends React.Component {
   }
 }
 
-// webgl();
 render(<Root />, document.querySelector("[app]"));
