@@ -1,8 +1,9 @@
-import React from "react";
-import * as Utils from "../utils";
-import { Link } from "react-router-dom";
-import enhance from "../webgl/enhance";
-import styled, { css, keyframes } from "styled-components";
+import React from 'react';
+import * as Utils from '../utils';
+import { Link } from 'react-router-dom';
+import enhance from '../webgl/enhance';
+import styled, { css, keyframes } from 'styled-components';
+import { Home as Header } from './Header';
 
 const anim = deg => keyframes`
   from { transform:rotate(0deg); }
@@ -12,8 +13,8 @@ const anim = deg => keyframes`
 const getAnim = left => ({ index }) => {
   const cond = index & 1;
   return left
-    ? anim(cond ? "360deg" : "-360deg")
-    : anim(cond ? "-360deg" : "360deg");
+    ? anim(cond ? '360deg' : '-360deg')
+    : anim(cond ? '-360deg' : '360deg');
 };
 
 const link = css`
@@ -22,7 +23,7 @@ const link = css`
     text-decoration: none;
     font-size: 16px;
     font-weight: 700;
-    font-family: "Maison Book";
+    font-family: 'Maison Book';
     letter-spacing: 1px;
   }
 `;
@@ -31,23 +32,11 @@ const Main = styled.div`
   background: #ffb3ba;
   display: grid;
   grid-template:
-    "header" 5rem
-    "links" auto
+    'header' min-content
+    'links' auto
     / 1fr;
-  grid-gap: 16rem;
+  grid-gap: 10rem;
   height: 100%;
-`;
-
-const Header = styled.header`
-  grid-area: header;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  padding: 0 2rem;
-  ${link};
-  a:last-of-type {
-    justify-self: end;
-  }
 `;
 
 const Links = styled.div`
@@ -60,6 +49,7 @@ const Links = styled.div`
 `;
 
 const Title = styled.div`
+  display: table;
   animation: ${getAnim(true)} 10s linear infinite;
   transform-origin: 50% 17px;
   ${link};
@@ -74,10 +64,7 @@ const Wrap = styled.div`
 
 const Home = ({ projects = [], name }) => (
   <Main>
-    <Header>
-      <Link to="/">Lucy Bradbury</Link>
-      <Link to="/about">About</Link>
-    </Header>
+    <Header />
     <Links length={projects.length}>
       {projects.map((props, key) => (
         <Title index={key} key={key}>

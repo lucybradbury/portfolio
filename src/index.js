@@ -1,12 +1,12 @@
-import React from "react";
-import { createClient } from "contentful";
-import { render } from "react-dom";
-import Home from "./components/Home";
-import Project from "./components/Project";
-import About from "./components/About";
-import * as Utils from "./utils";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import "./style";
+import React from 'react';
+import { createClient } from 'contentful';
+import { render } from 'react-dom';
+import Home from './components/Home';
+import Project from './components/Project';
+import About from './components/About';
+import * as Utils from './utils';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import './style';
 
 class Root extends React.Component {
   constructor() {
@@ -20,7 +20,6 @@ class Root extends React.Component {
   async componentDidMount() {
     const client = createClient(Utils.auth);
     const { items } = await client.getEntries();
-    // const { items } = require("./mock.json");
     const types = Utils.getTypes(items);
     const about = Utils.getAbout(types);
     const projects = Utils.getProjects(types);
@@ -53,8 +52,10 @@ class Root extends React.Component {
                 <Project
                   title={project.title}
                   body={project.body}
-                  meta={project.meta}
+                  link={project.link}
                   images={project.images}
+                  websiteDisplay={project.websiteDisplay}
+                  websiteUrl={project.websiteUrl}
                 />
               );
             }}
@@ -65,4 +66,4 @@ class Root extends React.Component {
   }
 }
 
-render(<Root />, document.querySelector("[app]"));
+render(<Root />, document.querySelector('[app]'));
