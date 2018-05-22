@@ -7,9 +7,6 @@ import Detector from "./Detector";
 const BASE_COLOR = "#fe91ed";
 const SPEC_COLOR = 0x111111;
 
-// const SPEC_COLOR = "#7462fc";
-document.body.style.backgroundColor = "#ffb3ba";
-
 export default () => {
   if (!Detector.webgl) Detector.addGetWebGLMessage();
 

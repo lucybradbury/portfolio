@@ -5,9 +5,8 @@ import Home from "./components/Home";
 import Project from "./components/Project";
 import About from "./components/About";
 import * as Utils from "./utils";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
-const client = createClient(Utils.auth);
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import "./style";
 
 class Root extends React.Component {
   constructor() {
@@ -19,7 +18,9 @@ class Root extends React.Component {
   }
 
   async componentDidMount() {
+    const client = createClient(Utils.auth);
     const { items } = await client.getEntries();
+    // const { items } = require("./mock.json");
     const types = Utils.getTypes(items);
     const about = Utils.getAbout(types);
     const projects = Utils.getProjects(types);
@@ -33,25 +34,32 @@ class Root extends React.Component {
 
     return (
       <Router>
-        <div>
-          {/* <Switch> */}
+        <Switch>
           <Route
             exact
             path="/"
-            component={props => (
-              <Home {...props} projects={this.state.projects} />
-            )}
+            component={() => {
+              const projects = Utils.sortByOrder(this.state.projects);
+              return <Home name="jack" projects={projects} />;
+            }}
           />
+          <Route exact path="/about" component={About} />
           <Route
-            path="/project/:id"
-            component={props => (
-              <Project {...props} projects={this.state.projects} />
-            )}
+            path="/:id"
+            component={({ match }) => {
+              const { projects } = this.state;
+              const project = Utils.pickProject(match.params.id, projects);
+              return (
+                <Project
+                  title={project.title}
+                  body={project.body}
+                  meta={project.meta}
+                  images={project.images}
+                />
+              );
+            }}
           />
-          <Route path="/about" component={About} />
-          {/* <Route component={Home} /> */}
-          {/* </Switch> */}
-        </div>
+        </Switch>
       </Router>
     );
   }

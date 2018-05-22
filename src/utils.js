@@ -5,6 +5,8 @@ import {
   prop,
   map,
   always,
+  evolve,
+  either,
   values,
   F,
   propEq,
@@ -26,6 +28,6 @@ export const getAbout = path(["about", 0, "fields"]);
 
 export const getProjects = pipe(prop(["project"]), map(prop("fields")));
 
-export const getProjectTitles = sortBy(prop("order"));
+export const sortByOrder = sortBy(prop("order"));
 
-export const pickProject = (url, xs) => find(propEq("url", url), xs);
+export const pickProject = (url, xs) => find(propEq("url", url), xs) || {};

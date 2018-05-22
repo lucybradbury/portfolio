@@ -17,10 +17,17 @@ const Sidebar = styled.div`
     "body " auto
     "meta " min-content
     / 1fr;
+  padding: 1rem 1rem 1rem 0;
+  grid-gap: 1rem;
 `;
 
 const Header = styled.header`
   grid-area: header;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  margin-bottom: 1rem;
 `;
 
 const Body = styled.p`
@@ -34,22 +41,30 @@ const Meta = styled.span`
 
 const Gallery = styled.div`
   grid-area: gallery;
+  padding: 1rem;
+  overflow: scroll;
 `;
 
-const Project = ({ match, projects }) => {
-  const project = Utils.pickProject(match.params.id, projects);
-  const { title = "", body = "", meta = [], images = [] } =
-    Utils.pickProject(match.params.id, projects) || {};
-  return (
-    <Layout images={images}>
-      <Gallery>{images.map(props => <Image {...props} />)}</Gallery>
-      <Sidebar>
-        <Header>{title}</Header>
-        <Body>{body}</Body>
-        <Meta>{meta}</Meta>
-      </Sidebar>
-    </Layout>
-  );
+const Project = ({ title, body, meta, images }) => (
+  <Layout>
+    <Gallery>
+      {images.map(({ fields }, key) => (
+        <Image key={key} src={`https:${fields.file.url}`} />
+      ))}
+    </Gallery>
+    <Sidebar>
+      <Header>{title}</Header>
+      <Body>{body}</Body>
+      <Meta>{meta}</Meta>
+    </Sidebar>
+  </Layout>
+);
+
+Project.defaultProps = {
+  title: "",
+  body: "",
+  meta: [],
+  images: []
 };
 
 export default Project;
