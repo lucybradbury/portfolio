@@ -1,5 +1,4 @@
 import React from 'react';
-import * as Utils from '../utils';
 import { Link } from 'react-router-dom';
 import enhance from '../webgl/enhance';
 import styled, { css, keyframes } from 'styled-components';

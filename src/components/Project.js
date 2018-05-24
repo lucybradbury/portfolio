@@ -1,5 +1,4 @@
 import React from 'react';
-import * as Utils from '../utils';
 import styled from 'styled-components';
 import { Project as Header } from './Header';
 import { pathOr } from 'ramda';

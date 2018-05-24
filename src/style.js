@@ -12,7 +12,7 @@ injectGlobal`
 
   @font-face {
     font-family: 'Maison Book';
-    src: url(${fonts['maisonneuebook-webfont.ttf']}) format('woff'),
+    src: url(${fonts['maisonneuebook-webfont.woff']}) format('woff'),
       url(${fonts['maisonneuebook-webfont.ttf']})  format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -20,7 +20,7 @@ injectGlobal`
 
   @font-face {
     font-family: 'Maison Mono';
-    src: url(${fonts['maisonneuemono-webfont.ttf']}) format('woff'),
+    src: url(${fonts['maisonneuemono-webfont.woff']}) format('woff'),
       url(${fonts['maisonneuemono-webfont.ttf']})  format('truetype');
     font-weight: normal;
     font-style: normal;
