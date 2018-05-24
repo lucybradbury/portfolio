@@ -2,6 +2,7 @@ import React from 'react';
 import * as Utils from '../utils';
 import styled from 'styled-components';
 import { Project as Header } from './Header';
+import { pathOr } from 'ramda';
 
 const Layout = styled.div`
   display: grid;
@@ -86,9 +87,10 @@ const Project = ({ title, body, websiteDisplay, websiteUrl, images }) => (
       <Body>{body}</Body>
     </Main>
     <Gallery>
-      {images.map(({ fields }, key) => (
-        <Image key={key} src={`https:${fields.file.url}`} />
-      ))}
+      {images.map(({ fields }, key) => {
+        const src = pathOr(false, ['file', 'url'], fields);
+        return src ? <Image key={key} src={`https:${src}`} /> : null;
+      })}
     </Gallery>
   </Layout>
 );

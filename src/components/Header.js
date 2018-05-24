@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Header = styled.header`
   grid-area: header;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   padding: 4rem 6rem;
   a {
@@ -16,11 +16,19 @@ const Header = styled.header`
     font-family: 'Maison Bold';
     letter-spacing: 0.1rem;
   }
-  a:last-of-type {
+  > :first-child {
+    justify-self: start;
+  }
+  > :last-child {
     justify-self: end;
   }
 `;
 
+const Group = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 2rem;
+`;
 export const Home = () => (
   <Header color="white">
     <Link to="/">Lucy Bradbury</Link>
@@ -39,6 +47,5 @@ export const About = () => (
   <Header color="black">
     <Link to="/">Lucy Bradbury</Link>
     <Link to="/">Projects</Link>
-    <Link to="/about">About</Link>
   </Header>
 );

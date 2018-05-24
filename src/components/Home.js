@@ -35,7 +35,7 @@ const Main = styled.div`
     'header' min-content
     'links' auto
     / 1fr;
-  grid-gap: 10rem;
+  grid-gap: 20rem;
   height: 100%;
 `;
 
@@ -44,7 +44,7 @@ const Links = styled.div`
   display: grid;
   justify-content: center;
   grid-template-columns: ${({ length }) => css`repeat(${length}, auto)`};
-  grid-gap: 2rem;
+  grid-gap: 5rem;
   z-index: 10;
 `;
 
@@ -62,7 +62,7 @@ const Wrap = styled.div`
   animation: ${getAnim(false)} 10s linear infinite;
 `;
 
-const Home = ({ projects = [], name }) => (
+const Home = ({ projects }) => (
   <Main>
     <Header />
     <Links length={projects.length}>

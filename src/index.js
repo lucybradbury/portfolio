@@ -4,26 +4,49 @@ import { render } from 'react-dom';
 import Home from './components/Home';
 import Project from './components/Project';
 import About from './components/About';
-import * as Utils from './utils';
+import { find, propEq } from 'ramda';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './style';
+
+const pickProject = (url, xs) => find(propEq('url', url), xs) || {};
+
+const formatAbout = ({ items: [{ fields }] }) => ({
+  body: fields.body,
+  social: fields.social.map(x => x.fields)
+});
+
+const formatProjects = ({ items }) =>
+  items[0].fields.project.map(x => x.fields);
 
 class Root extends React.Component {
   constructor() {
     super();
     this.state = {
-      about: {},
-      projects: {}
+      about: {
+        social: [],
+        body: ''
+      },
+      projects: []
     };
   }
 
   async componentDidMount() {
-    const client = createClient(Utils.auth);
-    const { items } = await client.getEntries();
-    const types = Utils.getTypes(items);
-    const about = Utils.getAbout(types);
-    const projects = Utils.getProjects(types);
-    this.setState({ about, projects });
+    const client = createClient({
+      accessToken:
+        '3c8746a144e07b86399bd4bd63ee28743250280d17a3a2b6b3586e3ecbc8ccaf',
+      space: '41ldn4xmab9t'
+    });
+
+    const about = await client.getEntries({
+      content_type: 'aboutMe'
+    });
+    const projects = await client.getEntries({
+      content_type: 'projects'
+    });
+    this.setState({
+      about: formatAbout(about),
+      projects: formatProjects(projects)
+    });
   }
 
   render() {
@@ -37,17 +60,18 @@ class Root extends React.Component {
           <Route
             exact
             path="/"
-            component={() => {
-              const projects = Utils.sortByOrder(this.state.projects);
-              return <Home name="jack" projects={projects} />;
-            }}
+            component={() => <Home projects={this.state.projects} />}
           />
-          <Route exact path="/about" component={About} />
+          <Route
+            exact
+            path="/about"
+            component={() => <About about={this.state.about} />}
+          />
           <Route
             path="/:id"
             component={({ match }) => {
               const { projects } = this.state;
-              const project = Utils.pickProject(match.params.id, projects);
+              const project = pickProject(match.params.id, projects);
               return (
                 <Project
                   title={project.title}

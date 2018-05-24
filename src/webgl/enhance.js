@@ -4,7 +4,7 @@ import webgl from '../webgl';
 export default Component =>
   class extends React.Component {
     componentDidMount() {
-      // webgl();
+      webgl();
     }
     render() {
       return (
