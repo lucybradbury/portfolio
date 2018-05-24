@@ -5,7 +5,7 @@ import Home from './components/Home';
 import Project from './components/Project';
 import About from './components/About';
 import { find, propEq } from 'ramda';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './style';
 
 const pickProject = (url, xs) => find(propEq('url', url), xs) || {};
