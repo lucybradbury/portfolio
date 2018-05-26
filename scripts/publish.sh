@@ -6,4 +6,5 @@ set -o errexit # Exit on error
 NODE_ENV=production npm run build
 
 # Commit & publish to gh-pages
-git subtree --prefix public push origin gh-pages
+git subtree push --prefix dist lucy gh-pages
+
