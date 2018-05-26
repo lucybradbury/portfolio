@@ -1,9 +1,9 @@
-import * as THREE from 'three';
-import OrbitControls from './OrbitControls';
-import GPUComputationRenderer from './GPUComputationRenderer';
-import SimplexNoise from './SimplexNoise';
+import * as THREE from "three";
+import OrbitControls from "./OrbitControls";
+import GPUComputationRenderer from "./GPUComputationRenderer";
+import SimplexNoise from "./SimplexNoise";
 
-const BASE_COLOR = '#fe91ed';
+const BASE_COLOR = "#fe91ed";
 const SPEC_COLOR = 0x111111;
 
 export default () => {
@@ -42,18 +42,18 @@ export default () => {
     return false;
   }
 
-  var options = '';
+  var options = "";
   for (var i = 4; i < 10; i++) {
     var j = Math.pow(2, i);
     options +=
-      '<a href="#" onclick="return change(' + j + ')">' + j + 'x' + j + '</a> ';
+      '<a href="#" onclick="return change(' + j + ')">' + j + "x" + j + "</a> ";
   }
 
   init();
   animate();
 
   function init() {
-    container = document.getElementById('canvas');
+    container = document.getElementById("canvas");
 
     camera = new THREE.PerspectiveCamera(
       75,
@@ -66,11 +66,11 @@ export default () => {
 
     scene = new THREE.Scene();
 
-    var sun = new THREE.DirectionalLight(0xffffff, 1.0);
+    var sun = new THREE.DirectionalLight("#ffffff", 1.0);
     sun.position.set(300, 400, 175);
     scene.add(sun);
 
-    var sun2 = new THREE.DirectionalLight('#fff000', 0.6);
+    var sun2 = new THREE.DirectionalLight("#fff000", 0.6);
     sun2.position.set(-100, 350, -200);
     scene.add(sun2);
 
@@ -85,14 +85,14 @@ export default () => {
     // stats = new Stats();
     // container.appendChild(stats.dom);
 
-    document.addEventListener('mousemove', onDocumentMouseMove, false);
+    document.addEventListener("mousemove", onDocumentMouseMove, false);
     window.innerWidth < 768
       ? null
-      : document.addEventListener('touchstart', onDocumentTouchStart, false);
-    document.addEventListener('touchmove', onDocumentTouchMove, false);
+      : document.addEventListener("touchstart", onDocumentTouchStart, false);
+    document.addEventListener("touchmove", onDocumentTouchMove, false);
 
     document.addEventListener(
-      'keydown',
+      "keydown",
       function(event) {
         // W Pressed: Toggle wireframe
         if (event.keyCode === 87) {
@@ -103,7 +103,7 @@ export default () => {
       false
     );
 
-    window.addEventListener('resize', onWindowResize, false);
+    window.addEventListener("resize", onWindowResize, false);
 
     //
     // var gui = new dat.GUI();
@@ -150,15 +150,15 @@ export default () => {
     // material: make a ShaderMaterial clone of MeshPhongMaterial, with customized vertex shader
     var material = new THREE.ShaderMaterial({
       uniforms: THREE.UniformsUtils.merge([
-        THREE.ShaderLib['phong'].uniforms,
+        THREE.ShaderLib["phong"].uniforms,
         {
           heightmap: {
             value: null
           }
         }
       ]),
-      vertexShader: document.getElementById('waterVertexShader').textContent,
-      fragmentShader: THREE.ShaderChunk['meshphong_frag']
+      vertexShader: document.getElementById("waterVertexShader").textContent,
+      fragmentShader: THREE.ShaderChunk["meshphong_frag"]
     });
 
     material.lights = true;
@@ -198,7 +198,7 @@ export default () => {
     meshRay = new THREE.Mesh(
       geometryRay,
       new THREE.MeshBasicMaterial({
-        color: '0xFFFFFF',
+        color: "#FFFFFF",
         visible: false
       })
     );
@@ -216,8 +216,8 @@ export default () => {
     fillTexture(heightmap0);
 
     heightmapVariable = gpuCompute.addVariable(
-      'heightmap',
-      document.getElementById('heightmapFragmentShader').textContent,
+      "heightmap",
+      document.getElementById("heightmapFragmentShader").textContent,
       heightmap0
     );
 
@@ -241,7 +241,7 @@ export default () => {
 
     // Create compute shader to smooth the water surface and velocity
     smoothShader = gpuCompute.createShaderMaterial(
-      document.getElementById('smoothFragmentShader').textContent,
+      document.getElementById("smoothFragmentShader").textContent,
       {
         texture: {
           value: null

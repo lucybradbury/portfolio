@@ -1,5 +1,5 @@
-import React from 'react';
-import webgl from '../webgl';
+import React from "react";
+import webgl from "../webgl";
 
 export default Component =>
   class extends React.Component {

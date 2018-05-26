@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import enhance from '../webgl/enhance';
-import styled, { css, keyframes } from 'styled-components';
-import { Home as Header } from './Header';
+import React from "react";
+import { Link } from "react-router-dom";
+import enhance from "../webgl/enhance";
+import styled, { css, keyframes } from "styled-components";
+import { Home as Header } from "./Header";
 
 const anim = deg => keyframes`
   from { transform:rotate(0deg); }
@@ -12,8 +12,8 @@ const anim = deg => keyframes`
 const getAnim = left => ({ index }) => {
   const cond = index & 1;
   return left
-    ? anim(cond ? '360deg' : '-360deg')
-    : anim(cond ? '-360deg' : '360deg');
+    ? anim(cond ? "360deg" : "-360deg")
+    : anim(cond ? "-360deg" : "360deg");
 };
 
 const link = css`
@@ -22,8 +22,8 @@ const link = css`
     text-decoration: none;
     font-size: 16px;
     font-weight: 700;
-    font-family: 'Maison Book';
-    letter-spacing: 1px;
+    font-family: "Maison Book";
+    letter-spacing: 0.6px;
   }
 `;
 
@@ -31,8 +31,8 @@ const Main = styled.div`
   background: #ffb3ba;
   display: grid;
   grid-template:
-    'header' min-content
-    'links' auto
+    "header" min-content
+    "links" auto
     / 1fr;
   grid-gap: 20rem;
   height: 100%;
