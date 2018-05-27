@@ -1,27 +1,27 @@
-import { injectGlobal } from 'styled-components';
-import fonts from './assets/fonts/*';
+import { injectGlobal } from "styled-components";
+import fonts from "./assets/fonts/*";
 
 injectGlobal`
   @font-face {
     font-family: 'Maison Bold';
-    src: url(${fonts['maisonneuebold-webfont.woff']}) format('woff'),
-      url(${fonts['maisonneuebold-webfont.ttf']})  format('truetype');
+    src: url(${fonts["maisonneuebold-webfont.woff"]}) format('woff'),
+      url(${fonts["maisonneuebold-webfont.ttf"]})  format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'Maison Book';
-    src: url(${fonts['maisonneuebook-webfont.woff']}) format('woff'),
-      url(${fonts['maisonneuebook-webfont.ttf']})  format('truetype');
+    src: url(${fonts["maisonneuebook-webfont.woff"]}) format('woff'),
+      url(${fonts["maisonneuebook-webfont.ttf"]})  format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'Maison Mono';
-    src: url(${fonts['maisonneuemono-webfont.woff']}) format('woff'),
-      url(${fonts['maisonneuemono-webfont.ttf']})  format('truetype');
+    src: url(${fonts["maisonneuemono-webfont.woff"]}) format('woff'),
+      url(${fonts["maisonneuemono-webfont.ttf"]})  format('truetype');
     font-weight: normal;
     font-style: normal;
   }
@@ -38,6 +38,11 @@ injectGlobal`
 
   body {
     margin: 0;  
+    height: 100vh;
+  }
+
+  body > section {
+    height: 100%;
   }
 
   p, a, span, body {
