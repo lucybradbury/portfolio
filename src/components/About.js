@@ -72,11 +72,18 @@ const About = ({ about }) => (
       <Footer>
         <span>Follow –</span>
         <Links>
-          {about.social.map(({ url, display }, key) => (
-            <a key={key} href={url} target="blank">
-              {display}
-            </a>
-          ))}
+          {about.social.map(
+            ({ url, display }, key) =>
+              display == "Play" ? (
+                <Link key={key} to="/play">
+                  {display}
+                </Link>
+              ) : (
+                <a key={key} href={url} target="blank">
+                  {display}
+                </a>
+              )
+          )}
         </Links>
       </Footer>
     </Body>

@@ -38398,66 +38398,7 @@ var About = exports.About = function About() {
     )
   );
 };
-},{"babel-runtime/helpers/taggedTemplateLiteral":23,"react":8,"styled-components":27,"react-router-dom":12}],5:[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _taggedTemplateLiteral2 = require("babel-runtime/helpers/taggedTemplateLiteral");
-
-var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
-
-var _templateObject = (0, _taggedTemplateLiteral3.default)(["\n  a {\n    color: black;\n    text-decoration: none;\n    font-size: 16px;\n    font-weight: 700;\n    font-family: \"Maison Book\";\n    letter-spacing: 0.6px;\n  }\n"], ["\n  a {\n    color: black;\n    text-decoration: none;\n    font-size: 16px;\n    font-weight: 700;\n    font-family: \"Maison Book\";\n    letter-spacing: 0.6px;\n  }\n"]),
-    _templateObject2 = (0, _taggedTemplateLiteral3.default)(["\n  display: grid;\n  grid-template:\n    \"header\" min-content\n    \"gallery\" auto\n    / 1fr;\n  grid-gap: 5rem;\n  height: 100%;\n"], ["\n  display: grid;\n  grid-template:\n    \"header\" min-content\n    \"gallery\" auto\n    / 1fr;\n  grid-gap: 5rem;\n  height: 100%;\n"]),
-    _templateObject3 = (0, _taggedTemplateLiteral3.default)(["\n  grid-area: gallery;\n  display: grid;\n  justify-self: center;\n  grid-template-columns: 1fr 1fr;\n  grid-gap: 1rem;\n  padding: 0 6rem;\n  padding-bottom: 18rem;\n"], ["\n  grid-area: gallery;\n  display: grid;\n  justify-self: center;\n  grid-template-columns: 1fr 1fr;\n  grid-gap: 1rem;\n  padding: 0 6rem;\n  padding-bottom: 18rem;\n"]),
-    _templateObject4 = (0, _taggedTemplateLiteral3.default)(["\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n"], ["\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n"]);
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = require("react-router-dom");
-
-var _styledComponents = require("styled-components");
-
-var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
-var _Header = require("./Header");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var link = (0, _styledComponents.css)(_templateObject);
-
-var Main = _styledComponents2.default.div(_templateObject2);
-
-var Gallery = _styledComponents2.default.div(_templateObject3);
-
-var Image = _styledComponents2.default.img(_templateObject4);
-
-var Home = function Home(_ref) {
-  var projects = _ref.projects;
-  return console.log(projects) || _react2.default.createElement(
-    Main,
-    null,
-    _react2.default.createElement(_Header.Home, null),
-    _react2.default.createElement(
-      Gallery,
-      null,
-      projects.map(function (props, key) {
-        return _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: props.url },
-          _react2.default.createElement(Image, { key: key, src: "https:" + props.thumbnail.fields.file.url })
-        );
-      })
-    )
-  );
-};
-
-exports.default = Home;
-},{"babel-runtime/helpers/taggedTemplateLiteral":23,"react":8,"react-router-dom":12,"styled-components":27,"./Header":26}],427:[function(require,module,exports) {
+},{"babel-runtime/helpers/taggedTemplateLiteral":23,"react":8,"styled-components":27,"react-router-dom":12}],427:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -55227,7 +55168,138 @@ Object.defineProperty(exports, 'zipWith', {
 });
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./F":34,"./T":35,"./__":36,"./add":37,"./addIndex":38,"./adjust":39,"./all":40,"./allPass":41,"./always":42,"./and":43,"./any":44,"./anyPass":45,"./ap":46,"./aperture":47,"./append":48,"./apply":49,"./applySpec":50,"./applyTo":51,"./ascend":52,"./assoc":53,"./assocPath":54,"./binary":55,"./bind":56,"./both":57,"./call":58,"./chain":59,"./clamp":60,"./clone":61,"./comparator":62,"./complement":63,"./compose":64,"./composeK":65,"./composeP":66,"./concat":67,"./cond":68,"./construct":69,"./constructN":70,"./contains":71,"./converge":72,"./countBy":73,"./curry":74,"./curryN":75,"./dec":76,"./defaultTo":77,"./descend":78,"./difference":79,"./differenceWith":80,"./dissoc":81,"./dissocPath":82,"./divide":83,"./drop":84,"./dropLast":85,"./dropLastWhile":86,"./dropRepeats":87,"./dropRepeatsWith":88,"./dropWhile":89,"./either":90,"./empty":91,"./endsWith":92,"./eqBy":93,"./eqProps":94,"./equals":95,"./evolve":96,"./filter":97,"./find":98,"./findIndex":99,"./findLast":100,"./findLastIndex":101,"./flatten":102,"./flip":103,"./forEach":104,"./forEachObjIndexed":105,"./fromPairs":106,"./groupBy":107,"./groupWith":108,"./gt":109,"./gte":110,"./has":111,"./hasIn":112,"./head":113,"./identical":115,"./identity":114,"./ifElse":116,"./inc":117,"./indexBy":118,"./indexOf":120,"./init":119,"./innerJoin":121,"./insert":122,"./insertAll":123,"./intersection":125,"./intersperse":124,"./into":126,"./invert":127,"./invertObj":128,"./invoker":130,"./is":129,"./isEmpty":131,"./isNil":133,"./join":132,"./juxt":134,"./keys":135,"./keysIn":136,"./last":138,"./lastIndexOf":137,"./length":139,"./lens":140,"./lensIndex":141,"./lensPath":142,"./lensProp":143,"./lift":144,"./liftN":145,"./lt":146,"./lte":147,"./map":148,"./mapAccum":149,"./mapAccumRight":150,"./mapObjIndexed":151,"./match":152,"./mathMod":153,"./max":154,"./maxBy":155,"./mean":156,"./median":157,"./memoize":158,"./memoizeWith":159,"./merge":160,"./mergeAll":161,"./mergeDeepLeft":162,"./mergeDeepRight":163,"./mergeDeepWith":164,"./mergeDeepWithKey":165,"./mergeWith":166,"./mergeWithKey":167,"./min":168,"./minBy":169,"./modulo":170,"./multiply":171,"./nAry":172,"./negate":173,"./none":174,"./not":175,"./nth":176,"./nthArg":177,"./o":178,"./objOf":179,"./of":180,"./omit":181,"./once":182,"./or":183,"./over":184,"./pair":185,"./partial":186,"./partialRight":187,"./partition":188,"./path":189,"./pathEq":190,"./pathOr":191,"./pathSatisfies":192,"./pick":193,"./pickAll":194,"./pickBy":195,"./pipe":196,"./pipeK":197,"./pipeP":198,"./pluck":199,"./prepend":200,"./product":201,"./project":202,"./prop":203,"./propEq":204,"./propIs":205,"./propOr":206,"./propSatisfies":207,"./props":208,"./range":209,"./reduce":210,"./reduceBy":211,"./reduceRight":212,"./reduceWhile":213,"./reduced":214,"./reject":215,"./remove":216,"./repeat":217,"./replace":218,"./reverse":219,"./scan":220,"./sequence":221,"./set":222,"./slice":223,"./sort":224,"./sortBy":225,"./sortWith":226,"./split":227,"./splitAt":228,"./splitEvery":229,"./splitWhen":230,"./startsWith":231,"./subtract":232,"./sum":233,"./symmetricDifference":234,"./symmetricDifferenceWith":235,"./tail":236,"./take":237,"./takeLast":238,"./takeLastWhile":239,"./takeWhile":240,"./tap":241,"./test":242,"./times":243,"./toLower":244,"./toPairs":245,"./toPairsIn":246,"./toString":247,"./toUpper":248,"./transduce":249,"./transpose":250,"./traverse":251,"./trim":252,"./tryCatch":253,"./type":254,"./unapply":255,"./unary":256,"./uncurryN":257,"./unfold":258,"./union":259,"./unionWith":260,"./uniq":261,"./uniqBy":262,"./uniqWith":263,"./unless":264,"./unnest":265,"./until":266,"./update":267,"./useWith":268,"./values":269,"./valuesIn":270,"./view":271,"./when":272,"./where":273,"./whereEq":274,"./without":275,"./xprod":276,"./zip":277,"./zipObj":278,"./zipWith":279}],6:[function(require,module,exports) {
+},{"./F":34,"./T":35,"./__":36,"./add":37,"./addIndex":38,"./adjust":39,"./all":40,"./allPass":41,"./always":42,"./and":43,"./any":44,"./anyPass":45,"./ap":46,"./aperture":47,"./append":48,"./apply":49,"./applySpec":50,"./applyTo":51,"./ascend":52,"./assoc":53,"./assocPath":54,"./binary":55,"./bind":56,"./both":57,"./call":58,"./chain":59,"./clamp":60,"./clone":61,"./comparator":62,"./complement":63,"./compose":64,"./composeK":65,"./composeP":66,"./concat":67,"./cond":68,"./construct":69,"./constructN":70,"./contains":71,"./converge":72,"./countBy":73,"./curry":74,"./curryN":75,"./dec":76,"./defaultTo":77,"./descend":78,"./difference":79,"./differenceWith":80,"./dissoc":81,"./dissocPath":82,"./divide":83,"./drop":84,"./dropLast":85,"./dropLastWhile":86,"./dropRepeats":87,"./dropRepeatsWith":88,"./dropWhile":89,"./either":90,"./empty":91,"./endsWith":92,"./eqBy":93,"./eqProps":94,"./equals":95,"./evolve":96,"./filter":97,"./find":98,"./findIndex":99,"./findLast":100,"./findLastIndex":101,"./flatten":102,"./flip":103,"./forEach":104,"./forEachObjIndexed":105,"./fromPairs":106,"./groupBy":107,"./groupWith":108,"./gt":109,"./gte":110,"./has":111,"./hasIn":112,"./head":113,"./identical":115,"./identity":114,"./ifElse":116,"./inc":117,"./indexBy":118,"./indexOf":120,"./init":119,"./innerJoin":121,"./insert":122,"./insertAll":123,"./intersection":125,"./intersperse":124,"./into":126,"./invert":127,"./invertObj":128,"./invoker":130,"./is":129,"./isEmpty":131,"./isNil":133,"./join":132,"./juxt":134,"./keys":135,"./keysIn":136,"./last":138,"./lastIndexOf":137,"./length":139,"./lens":140,"./lensIndex":141,"./lensPath":142,"./lensProp":143,"./lift":144,"./liftN":145,"./lt":146,"./lte":147,"./map":148,"./mapAccum":149,"./mapAccumRight":150,"./mapObjIndexed":151,"./match":152,"./mathMod":153,"./max":154,"./maxBy":155,"./mean":156,"./median":157,"./memoize":158,"./memoizeWith":159,"./merge":160,"./mergeAll":161,"./mergeDeepLeft":162,"./mergeDeepRight":163,"./mergeDeepWith":164,"./mergeDeepWithKey":165,"./mergeWith":166,"./mergeWithKey":167,"./min":168,"./minBy":169,"./modulo":170,"./multiply":171,"./nAry":172,"./negate":173,"./none":174,"./not":175,"./nth":176,"./nthArg":177,"./o":178,"./objOf":179,"./of":180,"./omit":181,"./once":182,"./or":183,"./over":184,"./pair":185,"./partial":186,"./partialRight":187,"./partition":188,"./path":189,"./pathEq":190,"./pathOr":191,"./pathSatisfies":192,"./pick":193,"./pickAll":194,"./pickBy":195,"./pipe":196,"./pipeK":197,"./pipeP":198,"./pluck":199,"./prepend":200,"./product":201,"./project":202,"./prop":203,"./propEq":204,"./propIs":205,"./propOr":206,"./propSatisfies":207,"./props":208,"./range":209,"./reduce":210,"./reduceBy":211,"./reduceRight":212,"./reduceWhile":213,"./reduced":214,"./reject":215,"./remove":216,"./repeat":217,"./replace":218,"./reverse":219,"./scan":220,"./sequence":221,"./set":222,"./slice":223,"./sort":224,"./sortBy":225,"./sortWith":226,"./split":227,"./splitAt":228,"./splitEvery":229,"./splitWhen":230,"./startsWith":231,"./subtract":232,"./sum":233,"./symmetricDifference":234,"./symmetricDifferenceWith":235,"./tail":236,"./take":237,"./takeLast":238,"./takeLastWhile":239,"./takeWhile":240,"./tap":241,"./test":242,"./times":243,"./toLower":244,"./toPairs":245,"./toPairsIn":246,"./toString":247,"./toUpper":248,"./transduce":249,"./transpose":250,"./traverse":251,"./trim":252,"./tryCatch":253,"./type":254,"./unapply":255,"./unary":256,"./uncurryN":257,"./unfold":258,"./union":259,"./unionWith":260,"./uniq":261,"./uniqBy":262,"./uniqWith":263,"./unless":264,"./unnest":265,"./until":266,"./update":267,"./useWith":268,"./values":269,"./valuesIn":270,"./view":271,"./when":272,"./where":273,"./whereEq":274,"./without":275,"./xprod":276,"./zip":277,"./zipObj":278,"./zipWith":279}],5:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = require("babel-runtime/core-js/object/get-prototype-of");
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require("babel-runtime/helpers/createClass");
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require("babel-runtime/helpers/possibleConstructorReturn");
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require("babel-runtime/helpers/inherits");
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _taggedTemplateLiteral2 = require("babel-runtime/helpers/taggedTemplateLiteral");
+
+var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
+
+var _templateObject = (0, _taggedTemplateLiteral3.default)(["\n  display: grid;\n  grid-template:\n    \"header\" min-content\n    \"gallery\" auto\n    / 1fr;\n  height: 100%;\n"], ["\n  display: grid;\n  grid-template:\n    \"header\" min-content\n    \"gallery\" auto\n    / 1fr;\n  height: 100%;\n"]),
+    _templateObject2 = (0, _taggedTemplateLiteral3.default)(["\n  grid-area: gallery;\n  display: grid;\n  justify-self: center;\n  grid-template-columns: 1fr 1fr;\n  grid-auto-rows: min-content;\n  grid-gap: 4rem 3rem;\n  padding: 0 6rem;\n  padding-bottom: 18rem;\n"], ["\n  grid-area: gallery;\n  display: grid;\n  justify-self: center;\n  grid-template-columns: 1fr 1fr;\n  grid-auto-rows: min-content;\n  grid-gap: 4rem 3rem;\n  padding: 0 6rem;\n  padding-bottom: 18rem;\n"]),
+    _templateObject3 = (0, _taggedTemplateLiteral3.default)(["\n  display: grid;\n  grid-gap: 2rem;\n  grid-template-rows: min-content auto;\n"], ["\n  display: grid;\n  grid-gap: 2rem;\n  grid-template-rows: min-content auto;\n"]),
+    _templateObject4 = (0, _taggedTemplateLiteral3.default)(["\n  width: 100%;\n  object-fit: cover;\n"], ["\n  width: 100%;\n  object-fit: cover;\n"]),
+    _templateObject5 = (0, _taggedTemplateLiteral3.default)(["\n  font-size: 2.2rem;\n  font-weight: 700;\n  font-family: \"Maison Bold\";\n  letter-spacing: 0.1rem;\n  color: black;\n  justify-self: center;\n"], ["\n  font-size: 2.2rem;\n  font-weight: 700;\n  font-family: \"Maison Bold\";\n  letter-spacing: 0.1rem;\n  color: black;\n  justify-self: center;\n"]);
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = require("react-router-dom");
+
+var _styledComponents = require("styled-components");
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _Header = require("./Header");
+
+var _ramda = require("ramda");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var hoverPath = (0, _ramda.pathOr)(false, ["thumbnailHover", "fields", "file", "url"]);
+
+var Main = _styledComponents2.default.div(_templateObject);
+
+var Gallery = _styledComponents2.default.div(_templateObject2);
+
+var Wrap = _styledComponents2.default.div(_templateObject3);
+
+var Image = _styledComponents2.default.img(_templateObject4);
+
+var Title = _styledComponents2.default.span(_templateObject5);
+
+var ImageHover = function (_React$Component) {
+  (0, _inherits3.default)(ImageHover, _React$Component);
+
+  function ImageHover(props) {
+    (0, _classCallCheck3.default)(this, ImageHover);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (ImageHover.__proto__ || (0, _getPrototypeOf2.default)(ImageHover)).call(this));
+
+    _this.state = {
+      src: props.src
+    };
+    return _this;
+  }
+
+  (0, _createClass3.default)(ImageHover, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(Image, {
+        src: "https:" + this.state.src,
+        onMouseEnter: function onMouseEnter() {
+          return _this2.setState({ src: _this2.props.hover || _this2.props.src });
+        },
+        onMouseLeave: function onMouseLeave() {
+          return _this2.setState({ src: _this2.props.src });
+        }
+      });
+    }
+  }]);
+  return ImageHover;
+}(_react2.default.Component);
+
+var Home = function Home(_ref) {
+  var projects = _ref.projects;
+  return _react2.default.createElement(
+    Main,
+    null,
+    _react2.default.createElement(_Header.Home, null),
+    _react2.default.createElement(
+      Gallery,
+      null,
+      projects.map(function (props, key) {
+        return _react2.default.createElement(
+          Wrap,
+          { key: key },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: props.url },
+            _react2.default.createElement(ImageHover, {
+              src: props.thumbnail.fields.file.url,
+              hover: hoverPath(props)
+            })
+          ),
+          _react2.default.createElement(
+            Title,
+            null,
+            props.title
+          )
+        );
+      })
+    )
+  );
+};
+
+exports.default = Home;
+},{"babel-runtime/core-js/object/get-prototype-of":15,"babel-runtime/helpers/classCallCheck":16,"babel-runtime/helpers/createClass":17,"babel-runtime/helpers/possibleConstructorReturn":18,"babel-runtime/helpers/inherits":19,"babel-runtime/helpers/taggedTemplateLiteral":23,"react":8,"react-router-dom":12,"styled-components":27,"./Header":26,"ramda":11}],6:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -55411,7 +55483,11 @@ var About = function About(_ref) {
           about.social.map(function (_ref2, key) {
             var url = _ref2.url,
                 display = _ref2.display;
-            return _react2.default.createElement(
+            return display == "Play" ? _react2.default.createElement(
+              _reactRouterDom.Link,
+              { key: key, to: "/play" },
+              display
+            ) : _react2.default.createElement(
               "a",
               { key: key, href: url, target: "blank" },
               display
@@ -55424,7 +55500,76 @@ var About = function About(_ref) {
 };
 
 exports.default = About;
-},{"babel-runtime/helpers/taggedTemplateLiteral":23,"react":8,"react-router-dom":12,"styled-components":27,"./Header":26}],28:[function(require,module,exports) {
+},{"babel-runtime/helpers/taggedTemplateLiteral":23,"react":8,"react-router-dom":12,"styled-components":27,"./Header":26}],712:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _taggedTemplateLiteral2 = require("babel-runtime/helpers/taggedTemplateLiteral");
+
+var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
+
+var _templateObject = (0, _taggedTemplateLiteral3.default)(["\n  display: grid;\n  grid-template:\n    \"header\" min-content\n    \"gallery\" auto\n    / 1fr;\n  height: 100%;\n"], ["\n  display: grid;\n  grid-template:\n    \"header\" min-content\n    \"gallery\" auto\n    / 1fr;\n  height: 100%;\n"]),
+    _templateObject2 = (0, _taggedTemplateLiteral3.default)(["\n  grid-area: title;\n  font-size: 3.3rem;\n  font-family: \"Maison Bold\";\n  letter-spacing: 0.6px;\n"], ["\n  grid-area: title;\n  font-size: 3.3rem;\n  font-family: \"Maison Bold\";\n  letter-spacing: 0.6px;\n"]),
+    _templateObject3 = (0, _taggedTemplateLiteral3.default)(["\n  grid-area: gallery;\n  padding: 2rem 12rem;\n  display: grid;\n  grid-gap: 3rem;\n\n  * {\n    width: 100%;\n  }\n"], ["\n  grid-area: gallery;\n  padding: 2rem 12rem;\n  display: grid;\n  grid-gap: 3rem;\n\n  * {\n    width: 100%;\n  }\n"]),
+    _templateObject4 = (0, _taggedTemplateLiteral3.default)(["\n  width: 100%;\n  margin-bottom: 3rem;\n"], ["\n  width: 100%;\n  margin-bottom: 3rem;\n"]);
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styledComponents = require("styled-components");
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _Header = require("./Header");
+
+var _ramda = require("ramda");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Layout = _styledComponents2.default.div(_templateObject);
+
+var Title = _styledComponents2.default.div(_templateObject2);
+
+var Gallery = _styledComponents2.default.div(_templateObject3);
+
+var Image = _styledComponents2.default.img(_templateObject4);
+
+var Project = function Project(_ref) {
+  var images = _ref.images;
+  return _react2.default.createElement(
+    Layout,
+    null,
+    _react2.default.createElement(_Header.Project, null),
+    _react2.default.createElement(
+      Gallery,
+      null,
+      images.map(function (_ref2, key) {
+        var contentType = _ref2.contentType,
+            url = _ref2.url;
+
+        if (contentType.includes("video")) {
+          return _react2.default.createElement("video", { key: key, autoPlay: true, type: contentType, src: "https:" + url });
+        }
+
+        return _react2.default.createElement("img", { key: key, src: url });
+      })
+    )
+  );
+};
+
+Project.defaultProps = {
+  title: "",
+  body: "",
+  meta: [],
+  images: []
+};
+
+exports.default = Project;
+},{"babel-runtime/helpers/taggedTemplateLiteral":23,"react":8,"styled-components":27,"./Header":26,"ramda":11}],28:[function(require,module,exports) {
 module.exports="/maisonneuebold-webfont.5980a0ef.ttf";
 },{}],29:[function(require,module,exports) {
 module.exports="/maisonneuebold-webfont.5ccc6399.woff";
@@ -55464,79 +55609,90 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _styledComponents.injectGlobal)(_templateObject, _2.default["maisonneuebold-webfont.woff"], _2.default["maisonneuebold-webfont.ttf"], _2.default["maisonneuebook-webfont.woff"], _2.default["maisonneuebook-webfont.ttf"], _2.default["maisonneuemono-webfont.woff"], _2.default["maisonneuemono-webfont.ttf"]);
 },{"babel-runtime/helpers/taggedTemplateLiteral":23,"styled-components":27,"./assets/fonts/*":21}],2:[function(require,module,exports) {
-'use strict';
+"use strict";
 
-var _assign = require('babel-runtime/core-js/object/assign');
+var _assign = require("babel-runtime/core-js/object/assign");
 
 var _assign2 = _interopRequireDefault(_assign);
 
-var _regenerator = require('babel-runtime/regenerator');
+var _regenerator = require("babel-runtime/regenerator");
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
+var _asyncToGenerator2 = require("babel-runtime/helpers/asyncToGenerator");
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+var _getPrototypeOf = require("babel-runtime/core-js/object/get-prototype-of");
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = require('babel-runtime/helpers/createClass');
+var _createClass2 = require("babel-runtime/helpers/createClass");
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+var _possibleConstructorReturn2 = require("babel-runtime/helpers/possibleConstructorReturn");
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _inherits2 = require('babel-runtime/helpers/inherits');
+var _inherits2 = require("babel-runtime/helpers/inherits");
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _slicedToArray2 = require('babel-runtime/helpers/slicedToArray');
+var _slicedToArray2 = require("babel-runtime/helpers/slicedToArray");
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _contentful = require('contentful');
+var _contentful = require("contentful");
 
-var _reactDom = require('react-dom');
+var _reactDom = require("react-dom");
 
-var _Home = require('./components/Home');
+var _Home = require("./components/Home");
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Project = require('./components/Project');
+var _Project = require("./components/Project");
 
 var _Project2 = _interopRequireDefault(_Project);
 
-var _About = require('./components/About');
+var _About = require("./components/About");
 
 var _About2 = _interopRequireDefault(_About);
 
-var _ramda = require('ramda');
+var _Gallery = require("./components/Gallery");
 
-var _reactRouterDom = require('react-router-dom');
+var _Gallery2 = _interopRequireDefault(_Gallery);
 
-require('./style');
+var _ramda = require("ramda");
+
+var _reactRouterDom = require("react-router-dom");
+
+require("./style");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var pickProject = function pickProject(url, xs) {
-  return (0, _ramda.find)((0, _ramda.propEq)('url', url), xs) || {};
+  return (0, _ramda.find)((0, _ramda.propEq)("url", url), xs) || {};
 };
 
-var formatAbout = function formatAbout(_ref) {
-  var _ref$items = (0, _slicedToArray3.default)(_ref.items, 1),
-      fields = _ref$items[0].fields;
+var formatPlay = function formatPlay(_ref) {
+  var items = _ref.items;
+  return items[0].fields.gallery.map(function (x) {
+    return x.fields.file;
+  });
+};
+
+var formatAbout = function formatAbout(_ref2) {
+  var _ref2$items = (0, _slicedToArray3.default)(_ref2.items, 1),
+      fields = _ref2$items[0].fields;
 
   return {
     body: fields.body,
@@ -55546,8 +55702,8 @@ var formatAbout = function formatAbout(_ref) {
   };
 };
 
-var formatProjects = function formatProjects(_ref2) {
-  var items = _ref2.items;
+var formatProjects = function formatProjects(_ref3) {
+  var items = _ref3.items;
   return items[0].fields.project.map(function (x) {
     return x.fields;
   });
@@ -55564,7 +55720,7 @@ var Root = function (_React$Component) {
     _this.state = {
       about: {
         social: [],
-        body: ''
+        body: ""
       },
       projects: []
     };
@@ -55572,40 +55728,49 @@ var Root = function (_React$Component) {
   }
 
   (0, _createClass3.default)(Root, [{
-    key: 'componentDidMount',
+    key: "componentDidMount",
     value: function () {
-      var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-        var client, about, projects;
+      var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+        var client, about, projects, play;
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 client = (0, _contentful.createClient)({
-                  accessToken: '3c8746a144e07b86399bd4bd63ee28743250280d17a3a2b6b3586e3ecbc8ccaf',
-                  space: '41ldn4xmab9t'
+                  accessToken: "3c8746a144e07b86399bd4bd63ee28743250280d17a3a2b6b3586e3ecbc8ccaf",
+                  space: "41ldn4xmab9t"
                 });
                 _context.next = 3;
                 return client.getEntries({
-                  content_type: 'aboutMe'
+                  content_type: "aboutMe"
                 });
 
               case 3:
                 about = _context.sent;
                 _context.next = 6;
                 return client.getEntries({
-                  content_type: 'projects'
+                  content_type: "projects"
                 });
 
               case 6:
                 projects = _context.sent;
+                _context.next = 9;
+                return client.getEntries({
+                  content_type: "play"
+                });
+
+              case 9:
+                play = _context.sent;
+
 
                 this.setState({
                   about: formatAbout(about),
+                  play: formatPlay(play),
                   projects: formatProjects(projects)
                 });
 
-              case 8:
-              case 'end':
+              case 11:
+              case "end":
                 return _context.stop();
             }
           }
@@ -55613,13 +55778,13 @@ var Root = function (_React$Component) {
       }));
 
       function componentDidMount() {
-        return _ref3.apply(this, arguments);
+        return _ref4.apply(this, arguments);
       }
 
       return componentDidMount;
     }()
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       var _this2 = this;
 
@@ -55635,22 +55800,29 @@ var Root = function (_React$Component) {
           null,
           _react2.default.createElement(_reactRouterDom.Route, {
             exact: true,
-            path: '/',
+            path: "/",
             component: function component() {
               return _react2.default.createElement(_Home2.default, { projects: _this2.state.projects });
             }
           }),
           _react2.default.createElement(_reactRouterDom.Route, {
             exact: true,
-            path: '/about',
+            path: "/about",
             component: function component() {
               return _react2.default.createElement(_About2.default, { about: _this2.state.about });
             }
           }),
           _react2.default.createElement(_reactRouterDom.Route, {
-            path: '/:id',
-            component: function component(_ref4) {
-              var match = _ref4.match;
+            exact: true,
+            path: "/play",
+            component: function component() {
+              return _react2.default.createElement(_Gallery2.default, { images: _this2.state.play });
+            }
+          }),
+          _react2.default.createElement(_reactRouterDom.Route, {
+            path: "/:id",
+            component: function component(_ref5) {
+              var match = _ref5.match;
               var projects = _this2.state.projects;
 
               var project = pickProject(match.params.id, projects);
@@ -55671,8 +55843,8 @@ var Root = function (_React$Component) {
   return Root;
 }(_react2.default.Component);
 
-(0, _reactDom.render)(_react2.default.createElement(Root, null), document.querySelector('[app]'));
-},{"babel-runtime/core-js/object/assign":13,"babel-runtime/regenerator":418,"babel-runtime/helpers/asyncToGenerator":14,"babel-runtime/core-js/object/get-prototype-of":15,"babel-runtime/helpers/classCallCheck":16,"babel-runtime/helpers/createClass":17,"babel-runtime/helpers/possibleConstructorReturn":18,"babel-runtime/helpers/inherits":19,"babel-runtime/helpers/slicedToArray":20,"react":8,"contentful":9,"react-dom":10,"./components/Home":5,"./components/Project":6,"./components/About":7,"ramda":11,"react-router-dom":12,"./style":4}],704:[function(require,module,exports) {
+(0, _reactDom.render)(_react2.default.createElement(Root, null), document.querySelector("[app]"));
+},{"babel-runtime/core-js/object/assign":13,"babel-runtime/regenerator":418,"babel-runtime/helpers/asyncToGenerator":14,"babel-runtime/core-js/object/get-prototype-of":15,"babel-runtime/helpers/classCallCheck":16,"babel-runtime/helpers/createClass":17,"babel-runtime/helpers/possibleConstructorReturn":18,"babel-runtime/helpers/inherits":19,"babel-runtime/helpers/slicedToArray":20,"react":8,"contentful":9,"react-dom":10,"./components/Home":5,"./components/Project":6,"./components/About":7,"./components/Gallery":712,"ramda":11,"react-router-dom":12,"./style":4}],713:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -55842,5 +56014,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[704,2], null)
+},{}]},{},[713,2], null)
 //# sourceMappingURL=/src.07f1a5d5.map
