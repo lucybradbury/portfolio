@@ -49,3 +49,10 @@ export const About = () => (
     <Link to="/">Projects</Link>
   </Header>
 );
+
+export const Play = () => (
+  <Header color="black">
+    <Link to="/">Lucy Bradbury</Link>
+    <Link to="/about">Close</Link>
+  </Header>
+);

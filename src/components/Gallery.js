@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Project as Header } from "./Header";
+import { Play as Header } from "./Header";
 import { pathOr } from "ramda";
 
 const Layout = styled.div`
