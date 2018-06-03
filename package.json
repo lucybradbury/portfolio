@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html",
-    "build": "NODE_ENV=production parcel build index.html --no-source-maps && scripts/cname.sh",
+    "build":
+      "NODE_ENV=production parcel build index.html --out-dir docs --no-source-maps && scripts/cname.sh",
     "publish": "scripts/publish.sh"
   },
   "dependencies": {

@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "lucybradbury.co.uk" > ./dist/CNAME
+echo "lucybradbury.co.uk" > ./docs/CNAME
