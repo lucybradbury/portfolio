@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Header = styled.header`
   grid-area: header;
@@ -13,7 +13,7 @@ const Header = styled.header`
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: 700;
-    font-family: 'Maison Bold';
+    font-family: "Maison Bold";
     letter-spacing: 0.1rem;
   }
   > :first-child {
@@ -30,7 +30,7 @@ const Group = styled.div`
   grid-gap: 2rem;
 `;
 export const Home = () => (
-  <Header color="white">
+  <Header color="black">
     <Link to="/">Lucy Bradbury</Link>
     <Link to="/about">About</Link>
   </Header>

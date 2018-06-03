@@ -1,24 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import enhance from "../webgl/enhance";
 import styled, { css, keyframes } from "styled-components";
 import { Home as Header } from "./Header";
 
-const anim = deg => keyframes`
-  from { transform:rotate(0deg); }
-  to { transform:rotate(${deg}); }
-`;
-
-const getAnim = left => ({ index }) => {
-  const cond = index & 1;
-  return left
-    ? anim(cond ? "360deg" : "-360deg")
-    : anim(cond ? "-360deg" : "360deg");
-};
-
 const link = css`
   a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-size: 16px;
     font-weight: 700;
@@ -28,54 +15,43 @@ const link = css`
 `;
 
 const Main = styled.div`
-  background: #ffb3ba;
   display: grid;
   grid-template:
     "header" min-content
-    "links" auto
+    "gallery" auto
     / 1fr;
-  grid-gap: 20rem;
+  grid-gap: 5rem;
   height: 100%;
 `;
 
-const Links = styled.div`
-  grid-area: links;
+const Gallery = styled.div`
+  grid-area: gallery;
   display: grid;
-  justify-content: center;
-  grid-template-columns: ${({ length }) => css`repeat(${length}, auto)`};
-  grid-gap: 5rem;
-  z-index: 10;
+  justify-self: center;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 0 6rem;
+  padding-bottom: 18rem;
 `;
 
-const Title = styled.div`
-  display: table;
-  animation: ${getAnim(true)} 10s linear infinite;
-  transform-origin: 50% 17px;
-  ${link};
-  a:hover {
-    opacity: 0;
-  }
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
-const Wrap = styled.div`
-  animation: ${getAnim(false)} 10s linear infinite;
-`;
+const Home = ({ projects }) =>
+  console.log(projects) || (
+    <Main>
+      <Header />
+      <Gallery>
+        {projects.map((props, key) => (
+          <Link to={props.url}>
+            <Image key={key} src={`https:${props.thumbnail.fields.file.url}`} />
+          </Link>
+        ))}
+      </Gallery>
+    </Main>
+  );
 
-const Home = ({ projects }) => (
-  <Main>
-    <Header />
-    <Links length={projects.length}>
-      {projects.map((props, key) => (
-        <Title index={key} key={key}>
-          <Wrap index={key}>
-            <Link key={key} to={props.url}>
-              {props.title}
-            </Link>
-          </Wrap>
-        </Title>
-      ))}
-    </Links>
-  </Main>
-);
-
-export default enhance(Home);
+export default Home;

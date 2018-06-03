@@ -5,20 +5,16 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html",
-    "build":
-      "NODE_ENV=production parcel build index.html --no-source-maps && scripts/cname.sh",
+    "build": "NODE_ENV=production parcel build index.html --no-source-maps && scripts/cname.sh",
     "publish": "scripts/publish.sh"
   },
   "dependencies": {
-    "axios": "^0.18.0",
     "contentful": "^6.1.0",
     "ramda": "^0.25.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "styled-components": "^3.2.6",
-    "three": "^0.92.0"
+    "styled-components": "^3.2.6"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
