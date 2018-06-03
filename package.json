@@ -6,8 +6,7 @@
   "scripts": {
     "start": "parcel index.html",
     "build":
-      "NODE_ENV=production parcel build index.html --out-dir docs --no-source-maps && scripts/cname.sh",
-    "publish": "scripts/publish.sh"
+      "NODE_ENV=production parcel build index.html --out-dir docs --no-source-maps && scripts/cname.sh"
   },
   "dependencies": {
     "contentful": "^6.1.0",
