@@ -14,7 +14,6 @@ const Header = styled.header`
     font-size: 1.8rem;
     font-weight: 700;
     font-family: "Maison Bold";
-    letter-spacing: 0.1rem;
   }
   > :first-child {
     justify-self: start;

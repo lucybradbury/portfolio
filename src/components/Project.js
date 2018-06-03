@@ -28,7 +28,6 @@ const Body = styled.p`
   grid-area: body;
   font-size: 2.4rem;
   font-family: "Maison Book";
-  letter-spacing: 0.1rem;
   line-height: 3.7rem;
   width: 80%;
   white-space: pre-line;
@@ -48,7 +47,6 @@ const Title = styled.div`
   grid-area: title;
   font-size: 3.3rem;
   font-family: "Maison Bold";
-  letter-spacing: 0.6px;
 `;
 
 const Url = styled.a.attrs({
@@ -58,7 +56,6 @@ const Url = styled.a.attrs({
   grid-area: url;
   font-size: 2.4rem;
   font-family: "Maison Book";
-  letter-spacing: 0.1rem;
   text-decoration: none;
   cursor: pointer;
   color: black;

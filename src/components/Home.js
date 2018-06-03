@@ -13,6 +13,7 @@ const Main = styled.div`
     "gallery" auto
     / 1fr;
   height: 100%;
+  grid-gap: 5rem;
 `;
 
 const Gallery = styled.div`
@@ -21,7 +22,7 @@ const Gallery = styled.div`
   justify-self: center;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: min-content;
-  grid-gap: 4rem 3rem;
+  grid-gap: 4rem 7rem;
   padding: 0 6rem;
   padding-bottom: 18rem;
 `;
@@ -39,9 +40,7 @@ const Image = styled.img`
 
 const Title = styled.span`
   font-size: 2.2rem;
-  font-weight: 700;
-  font-family: "Maison Bold";
-  letter-spacing: 0.1rem;
+  font-family: "Maison Book";
   color: black;
   justify-self: center;
 `;
@@ -52,16 +51,18 @@ class ImageHover extends React.Component {
     this.state = {
       src: props.src
     };
+    this.setSrc = this.setSrc.bind(this);
+  }
+  setSrc(src) {
+    this.setState({ src });
   }
 
   render() {
     return (
       <Image
         src={`https:${this.state.src}`}
-        onMouseEnter={() =>
-          this.setState({ src: this.props.hover || this.props.src })
-        }
-        onMouseLeave={() => this.setState({ src: this.props.src })}
+        onMouseEnter={() => this.setSrc(this.props.hover || this.props.src)}
+        onMouseLeave={() => this.setSrc(this.props.src)}
       />
     );
   }

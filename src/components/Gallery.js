@@ -16,7 +16,6 @@ const Title = styled.div`
   grid-area: title;
   font-size: 3.3rem;
   font-family: "Maison Bold";
-  letter-spacing: 0.6px;
 `;
 
 const Gallery = styled.div`
