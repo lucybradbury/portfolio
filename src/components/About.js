@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled, { css, keyframes } from "styled-components";
 import { About as Header } from "./Header";
+import { media } from "../style";
 
 const Main = styled.div`
   background: #a3ffbe;
@@ -13,6 +14,7 @@ const Main = styled.div`
   grid-gap: 6rem;
   height: 100%;
   overflow: scroll;
+  ${media.mobile` grid-gap: 1rem; `};
 `;
 
 const Body = styled.div`
@@ -23,6 +25,7 @@ const Body = styled.div`
     "footer" auto
     / 1fr;
   grid-gap: 10rem;
+  ${media.mobile` grid-gap: 1rem; `};
 `;
 
 const Intro = styled.div`
@@ -32,6 +35,14 @@ const Intro = styled.div`
   justify-self: center;
   white-space: pre-line;
   margin-right: -17rem;
+  ${media.mobile` 
+    margin: 0; 
+    justify-self: start; 
+    padding: 2rem; 
+    width: auto;
+    font-size: 2.2rem;
+    line-height: 3.4rem;
+  `};
 `;
 
 const Footer = styled.div`
@@ -42,10 +53,21 @@ const Footer = styled.div`
   width: 50%;
   grid-gap: 1rem;
   margin-left: -9rem;
+  ${media.mobile` 
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content;
+    margin: 0; 
+    justify-self: start; 
+    padding: 2rem; 
+    width: auto;
+  `};
 
   * {
     font-size: 3rem;
     white-space: nowrap;
+    ${media.mobile`
+      font-size: 2.2rem;
+    `};
   }
 
   a {
@@ -55,6 +77,9 @@ const Footer = styled.div`
     display: table;
     margin-bottom: 1.2rem;
     line-height: 3.5rem;
+    ${media.mobile`
+      line-height: 3.2rem;
+    `};
   }
 `;
 

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Project as Header } from "./Header";
 import { pathOr } from "ramda";
+import { media } from "../style";
 
 const Layout = styled.div`
   display: grid;
@@ -21,16 +22,27 @@ const Main = styled.div`
     / 1fr 3fr;
   grid-gap: 3rem;
   padding: 6rem 12rem 6rem 12rem;
+  ${media.mobile`
+    padding: 2rem; 
+    grid-template:
+    "intro" auto
+    "body" auto
+    / 1fr;
+  `};
 `;
 
 const Body = styled.p`
   margin: 0;
   grid-area: body;
-  font-size: 2.4rem;
   font-family: "Maison Book";
+  font-size: 2.4rem;
   line-height: 3.7rem;
   width: 80%;
   white-space: pre-line;
+  ${media.mobile`
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+  `};
 `;
 
 const Intro = styled.div`
@@ -65,6 +77,7 @@ const Url = styled.a.attrs({
 const Gallery = styled.div`
   grid-area: gallery;
   padding: 2rem 12rem;
+  ${media.mobile`padding: 2rem;`};
 `;
 
 const Image = styled.img`

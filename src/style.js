@@ -1,5 +1,19 @@
-import { injectGlobal } from "styled-components";
+import { injectGlobal, css } from "styled-components";
 import fonts from "./assets/fonts/*";
+
+const sizes = {
+  mobile: 768
+};
+
+export const media = Object.keys(sizes).reduce((accumulator, label) => {
+  const emSize = sizes[label];
+  accumulator[label] = (...args) => css`
+    @media (max-width: ${emSize}px) {
+      ${css(...args)};
+    }
+  `;
+  return accumulator;
+}, {});
 
 injectGlobal`
   @font-face {

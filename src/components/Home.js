@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled, { css, keyframes } from "styled-components";
 import { Home as Header } from "./Header";
 import { pathOr } from "ramda";
+import { media } from "../style";
 
 const hoverPath = pathOr(false, ["thumbnailHover", "fields", "file", "url"]);
 
@@ -14,6 +15,9 @@ const Main = styled.div`
     / 1fr;
   height: 100%;
   grid-gap: 5rem;
+  ${media.mobile`
+    grid-gap: 1rem;
+  `};
 `;
 
 const Gallery = styled.div`
@@ -25,6 +29,10 @@ const Gallery = styled.div`
   grid-gap: 4rem 7rem;
   padding: 0 6rem;
   padding-bottom: 18rem;
+  ${media.mobile`
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  `};
 `;
 
 const Wrap = styled.div`

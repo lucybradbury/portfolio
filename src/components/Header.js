@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { media } from "../style";
 
 const Header = styled.header`
   grid-area: header;
@@ -8,6 +9,7 @@ const Header = styled.header`
   grid-template-columns: 1fr 1fr;
   align-items: center;
   padding: 4rem 6rem;
+  ${media.mobile` padding: 2rem; `};
   a {
     color: ${({ color }) => color};
     text-decoration: none;
