@@ -40,7 +40,7 @@ export const Home = () => (
   <Header color="black">
     <Link to="/">Lucy Bradbury</Link>
     <Divider>
-      <Link to="/play">Play</Link>
+      <Link to="/play">3D</Link>
       <Link to="/about">About</Link>
     </Divider>
   </Header>
