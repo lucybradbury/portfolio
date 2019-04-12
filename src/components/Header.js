@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { media } from "../style";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { media } from '../style';
 
 const Header = styled.header`
   grid-area: header;
@@ -15,7 +15,7 @@ const Header = styled.header`
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: 700;
-    font-family: "Maison Bold";
+    font-family: 'Maison Bold';
   }
   > :first-child {
     justify-self: start;
@@ -28,14 +28,9 @@ const Header = styled.header`
 const Divider = styled.div`
   display: grid;
   grid-template-columns: auto auto;
-  grid-gap: 2rem;
-`
-
-const Group = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 2rem;
+  grid-gap: 4rem;
 `;
+
 export const Home = () => (
   <Header color="black">
     <Link to="/">Lucy Bradbury</Link>
