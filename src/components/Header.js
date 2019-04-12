@@ -25,6 +25,12 @@ const Header = styled.header`
   }
 `;
 
+const Divider = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 2rem;
+`
+
 const Group = styled.div`
   display: grid;
   grid-template-columns: auto auto;
@@ -33,7 +39,10 @@ const Group = styled.div`
 export const Home = () => (
   <Header color="black">
     <Link to="/">Lucy Bradbury</Link>
-    <Link to="/about">About</Link>
+    <Divider>
+      <Link to="/play">Play</Link>
+      <Link to="/about">About</Link>
+    </Divider>
   </Header>
 );
 
