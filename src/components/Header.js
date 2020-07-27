@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { media } from '../style';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { media } from "../style";
 
 const Header = styled.header`
   grid-area: header;
@@ -15,7 +15,7 @@ const Header = styled.header`
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: 700;
-    font-family: 'Maison Bold';
+    font-family: "Maison Bold";
   }
   > :first-child {
     justify-self: start;
@@ -35,7 +35,7 @@ export const Home = () => (
   <Header color="black">
     <Link to="/">Lucy Bradbury</Link>
     <Divider>
-      <Link to="/play">3D</Link>
+      <Link to="/play">Play</Link>
       <Link to="/about">About</Link>
     </Divider>
   </Header>

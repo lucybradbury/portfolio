@@ -62,8 +62,8 @@ const Title = styled.div`
 `;
 
 const Url = styled.a.attrs({
-  href: props => props.url,
-  target: "blank"
+  href: (props) => props.url,
+  target: "blank",
 })`
   grid-area: url;
   font-size: 2.4rem;
@@ -85,6 +85,11 @@ const Image = styled.img`
   margin-bottom: 3rem;
 `;
 
+const Vid = styled.img`
+  width: 100%;
+  margin-bottom: 3rem;
+`;
+
 const Project = ({ title, body, websiteDisplay, websiteUrl, images }) => (
   <Layout>
     <Header />
@@ -100,7 +105,18 @@ const Project = ({ title, body, websiteDisplay, websiteUrl, images }) => (
     <Gallery>
       {images.map(({ fields }, key) => {
         const src = pathOr(false, ["file", "url"], fields);
-        return src ? <Image key={key} src={`https:${src}`} /> : null;
+        const contentType = pathOr("", ["file", "contentType"], fields);
+
+        if (src) {
+          if (contentType.includes("video")) {
+            return (
+              <Vid key={key} autoPlay type={contentType} src={"https:" + src} />
+            );
+          }
+          return <Image key={key} src={`https:${src}`} />;
+        }
+
+        return null;
       })}
     </Gallery>
   </Layout>
@@ -110,7 +126,7 @@ Project.defaultProps = {
   title: "",
   body: "",
   meta: [],
-  images: []
+  images: [],
 };
 
 export default Project;
