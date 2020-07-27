@@ -85,7 +85,7 @@ const Image = styled.img`
   margin-bottom: 3rem;
 `;
 
-const Vid = styled.img`
+const Vid = styled.video`
   width: 100%;
   margin-bottom: 3rem;
 `;
